@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "start:v2": "webpack serve"
   },
   "keywords": [],
   "author": "ayman morsy",
