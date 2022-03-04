@@ -1,21 +1,17 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const htmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
-  // Default settings
   mode: "development",
-  devtool: "inline-source-map",
-  entry: {
-    main: path.join(__dirname, "src", "index.js"),
-  },
   output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "dist"),
     clean: true,
+    filename: "bundel.js",
+    path: path.resolve(__dirname, "dist"),
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html"),
+    new htmlWebpackPlugin({
       filename: "index.html",
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
   ],
   devServer: {
