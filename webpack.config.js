@@ -1,27 +1,52 @@
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const { nav } = require("./pages.json");
+
+let navPages = nav.map(
+  (page) =>
+    new htmlWebpackPlugin({
+      title: `FTO ${page.name}`,
+      description: `${page.description}`,
+      filename: `${page.name}.html`,
+      template: path.resolve(__dirname, "src", `${page.name}.pug`),
+    })
+);
 module.exports = {
   mode: "development",
   output: {
     clean: true,
     filename: "bundel.js",
     path: path.resolve(__dirname, "dist"),
-    // assetModuleFilename: "imges/[name][ext][query]",
+    assetModuleFilename: "imges/[name][ext][query]",
   },
   devtool: "source-map",
   module: {
     rules: [
       {
         test: /\.scss/,
-        use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        type: "asset/resource",
+        use: [
+          miniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            // options: {...}
+          },
+          // {
+          //   loader: "resolve-url-loader",
+          //   // options: {...}
+          // },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        loader: "file-loader",
-        options: {
-          name: "imges/[name].[ext]",
-        },
+        type: "asset/resource",
       },
       {
         test: /\.pug$/i,
@@ -36,23 +61,16 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new htmlWebpackPlugin({
-      title: "FTO about",
-      filename: "about.html",
-      template: path.resolve(__dirname, "src", "about.pug"),
-    }),
-    new htmlWebpackPlugin({
-      title: "FTO home",
-      filename: "index.html",
-      template: path.resolve(__dirname, "src", "index.pug"),
-      minify: false,
-    }),
-    new miniCssExtractPlugin(),
-  ],
+  plugins: [...navPages, new miniCssExtractPlugin()],
   devServer: {
     watchFiles: ["src/**/*.pug"],
     hot: true,
-    // open: true,
+    open: {
+      target: ["index.html"],
+      app: {
+        name: "chrome",
+        arguments: ["--incognito", "--new-window"],
+      },
+    },
   },
 };
