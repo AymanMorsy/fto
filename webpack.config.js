@@ -26,23 +26,7 @@ module.exports = {
       {
         test: /\.scss/,
         type: "asset/resource",
-        use: [
-          miniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            // options: {...}
-          },
-          // {
-          //   loader: "resolve-url-loader",
-          //   // options: {...}
-          // },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
+        use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
