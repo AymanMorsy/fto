@@ -1,0 +1,15 @@
+header {
+  --base-clr: gray;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    margin: 5px;
+    width: 70px;
+  }
+}
+
+@import "nav.scss";
+@import "social.scss";

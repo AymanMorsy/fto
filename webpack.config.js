@@ -9,14 +9,13 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     // assetModuleFilename: "imges/[name][ext][query]",
   },
+  devtool: "source-map",
   module: {
     rules: [
-      // { test: /\.css/, use: ["style-loader", "css-loader"] },
       {
         test: /\.scss/,
         use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
-      // { test: /\.(jpg)$/, type: "asset/resource" },
       {
         test: /\.(png|jpe?g|gif)$/i,
         loader: "file-loader",
@@ -54,6 +53,6 @@ module.exports = {
   devServer: {
     watchFiles: ["src/**/*.pug"],
     hot: true,
-    open: true,
+    // open: true,
   },
 };

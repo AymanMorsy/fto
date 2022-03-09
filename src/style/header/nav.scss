@@ -1,0 +1,11 @@
+nav {
+  ul {
+    display: flex;
+
+    a {
+      padding: 0 10px;
+      text-transform: capitalize;
+      color: var(--base-clr);
+    }
+  }
+}

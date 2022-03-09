@@ -1,70 +1,13 @@
-body {
-  padding: 5px;
-  margin: 0;
-  background: rgb(255, 255, 255);
-  color: rgb(44, 44, 44);
-  font-family: "Tajawal", sans-serif;
-}
-a {
-  text-decoration: none;
-}
-ul,
-li {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.logo {
-  margin: 5px;
-  width: 70px;
-}
-header {
-  padding: 0 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-nav {
-  ul {
-    display: flex;
-
-    a {
-      padding: 0 10px;
-      text-transform: capitalize;
-      color: orange;
-    }
-  }
-}
-img {
-  width: 300px;
-  height: 300px;
-}
+@import "style/reset.scss";
+@import "style/header/header.scss";
 
 .prod-feature {
   display: flex;
   justify-content: center;
-}
-.social {
-  display: flex;
+  flex-wrap: wrap;
 
-  div {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-.social {
-  .twitter {
-    fill: rgb(0, 183, 255);
-  }
-  .youtube {
-    fill: rgb(248, 41, 41);
-  }
-  .facebook {
-    fill: rgb(0, 98, 255);
-  }
-  .whatsapp {
-    fill: rgb(2, 219, 85);
+  img {
+    width: 250px;
+    height: 250px;
   }
 }
