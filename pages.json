@@ -1,0 +1,41 @@
+{
+  "nav": [
+    {
+      "name": "index",
+      "title": "home",
+      "description": "this home page"
+    },
+    {
+      "name": "about",
+      "title": "about",
+      "description": "this about page"
+    },
+    {
+      "name": "products",
+      "title": "products",
+      "description": "this products page"
+    },
+    {
+      "name": "shipping",
+      "title": "shipping",
+      "description": "this shipping page"
+    },
+    {
+      "name": "farm",
+      "title": "farm",
+      "description": "this farm page"
+    },
+    {
+      "name": "contact",
+      "title": "contact",
+      "description": "this contact page"
+    }
+  ],
+  "products": [
+    {
+      "name": "orange",
+      "title": "orgainc orange",
+      "description": "this home page"
+    }
+  ]
+}

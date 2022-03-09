@@ -6,15 +6,18 @@ html(lang="en")
     main(data-barba='container' data-barba-namespace='home')
       //- header
       include includes/header.pug
-      h1 Home
-      p Lorem ipsum dolor sit amet.
-      .prod-feature
-        img(src=require('./imges/checken.jpg').default alt='')
-        img(src=require('./imges/tomato.jpg').default alt='')
-        img(src=require('./imges/carotes.jpg').default alt='')
-        img(src=require('./imges/checken.jpg').default alt='')
-        img(src=require('./imges/tomato.jpg').default alt='')
-        img(src=require('./imges/carotes.jpg').default alt='')
-        img(src=require('./imges/checken.jpg').default alt='')
-        img(src=require('./imges/tomato.jpg').default alt='')
-      include includes/footer.pug
+      .hero 
+        p Welcome to the home of good, clean food in Egypt.
+          |We believe you should know your food, where it comes from and who grows it. We deliver organic produce and premium, pesticide free fruits and vegetables straight from the source to your home.
+      div(class="prod-feature" )
+        img(src=require('./imges/checken.jpg') alt='')
+        img(src=require('./imges/tomato.jpg') alt='')
+        img(src=require('./imges/carotes.jpg') alt='')
+        img(src=require('./imges/checken.jpg') alt='')
+        img(src=require('./imges/tomato.jpg') alt='')
+        img(src=require('./imges/carotes.jpg') alt='')
+        img(src=require('./imges/checken.jpg') alt='')
+        img(src=require('./imges/tomato.jpg') alt='')
+
+
+    include includes/footer.pug
