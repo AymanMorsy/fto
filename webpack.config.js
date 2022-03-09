@@ -1,38 +1,59 @@
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
-// const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   mode: "development",
   output: {
     clean: true,
     filename: "bundel.js",
     path: path.resolve(__dirname, "dist"),
+    // assetModuleFilename: "imges/[name][ext][query]",
   },
   module: {
-    rules: [{ test: /\.css/, use: ["style-loader", "css-loader"] }],
+    rules: [
+      // { test: /\.css/, use: ["style-loader", "css-loader"] },
+      {
+        test: /\.scss/,
+        use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+      // { test: /\.(jpg)$/, type: "asset/resource" },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: "file-loader",
+        options: {
+          name: "imges/[name].[ext]",
+        },
+      },
+      {
+        test: /\.pug$/i,
+        use: [
+          {
+            loader: "pug-loader",
+            options: {
+              pretty: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new htmlWebpackPlugin({
-      cache: false,
-      filename: "index.html",
-      template: path.resolve(__dirname, "src", "index.html"),
+      title: "FTO about",
+      filename: "about.html",
+      template: path.resolve(__dirname, "src", "about.pug"),
     }),
-
-    // new BrowserSyncPlugin(
-    //   {
-    //     // browse to http://localhost:3000/ during development,
-    //     // ./public directory is being served
-    //     host: "localhost",
-    //     port: 3000,
-    //     files: ["./dist/*.html"],
-    //     server: { baseDir: ["dist"] },
-    //
-    //   }),
+    new htmlWebpackPlugin({
+      title: "FTO home",
+      filename: "index.html",
+      template: path.resolve(__dirname, "src", "index.pug"),
+      minify: false,
+    }),
+    new miniCssExtractPlugin(),
   ],
   devServer: {
-    open: true,
-    watchFiles: ["src/*.html"],
+    watchFiles: ["src/**/*.pug"],
     hot: true,
+    open: true,
   },
 };
