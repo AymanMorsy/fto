@@ -1,7 +1,136 @@
+:root {
+  --green: #86ae34;
+  --text-color: #8b8b8b;
+  --font-handwriting: "Pacifico", cursive;
+  --font-tajwal: "Tajawal", sans-serif;
+}
+
 @import "style/reset.scss";
 @import "style/header/header.scss";
 
+header .logo {
+  margin: 5px;
+}
+
+.hero {
+  position: relative;
+  background: url("./imges/farm.jpg") center top;
+  height: calc(70vh - 51px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.52);
+    height: calc(70vh - 51px);
+    width: 100%;
+  }
+
+  h2 {
+    position: relative;
+    z-index: 2;
+    color: #b9b9b9;
+    text-align: center;
+    font-size: 45px;
+    height: 66px;
+    overflow: hidden;
+    .dynamic-container {
+      display: inline-flex;
+      flex-direction: column;
+    }
+  }
+
+  .dynamic-word {
+    color: var(--green);
+  }
+}
+.transition {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #dffff4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateX(100%);
+  z-index: 1000;
+  .logo {
+    width: 200px;
+    // height: 200px;
+    z-index: 1001;
+  }
+
+  h2 {
+    span {
+      color: #017739;
+    }
+  }
+}
+
+.wellcom {
+  font-family: var(--font-handwriting);
+  text-align: center;
+
+  .title {
+    color: var(--green);
+    font-size: 48px;
+  }
+
+  .cycle-wrapper {
+    display: flex;
+
+    .cycle {
+      padding: 5px 10px;
+      p:first-child {
+        color: var(--green);
+        font-size: 100px;
+        margin: 0;
+      }
+      p:last-child {
+        font-family: var(--font-tajwal);
+        color: var(--text-color);
+      }
+    }
+  }
+}
+section.banner {
+  margin-top: 50px;
+  padding-top: 20px;
+  background-image: url("./imges/banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  min-height: 65vh;
+  h3 {
+    font-size: 70px;
+    font-weight: 700;
+    margin: 0;
+  }
+  p {
+    font-family: var(--font-handwriting);
+    font-size: 30px;
+  }
+
+  button {
+    border: none;
+    background-color: var(--green);
+    padding: 10px 30px;
+    color: black;
+    transition: all 1s;
+
+    &:hover {
+      color: white;
+      background-color: rgb(68, 6, 60);
+    }
+  }
+}
 .prod-feature {
+  padding-top: 100px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -16,7 +145,19 @@ footer {
   height: 200vh;
 }
 
-.hero {
-  background-image: url("./imges/farm.jpg");
-  height: 400px;
+section.facts {
+  padding-top: 100px;
+  display: flex;
+
+  img {
+    width: 50vw;
+  }
+
+  .info {
+    padding: 10px;
+
+    h5 {
+      font-family: var(--font-handwriting);
+    }
+  }
 }
