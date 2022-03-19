@@ -1,17 +1,5 @@
 header
-  .logo
-    svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 100.7 49.4')
-      g.o
-        circle.out(cx='78.6' cy='29.6' r='19.4' fill='#f15a24')
-        circle.in(cx='78.6' cy='29.6' r='10' fill='#f2f2f2')
-      g.f
-        rect(y='8.4' width='8.6' height='41' rx='4.3' transform='rotate(-180 4.28 28.94)')
-        rect(x='7.6' y='.8' width='8.6' height='23.7' rx='4.3' transform='rotate(90 11.9 12.7)')
-        rect(x='7.6' y='15.4' width='8.6' height='23.7' rx='4.3' transform='rotate(90 11.9 27.2)')
-      g.t
-        rect(x='40.4' y='8.7' width='8.6' height='40.8' rx='4.3')
-        rect(x='40.4' y='-2.2' width='8.6' height='30.3' rx='4.3' transform='rotate(90 44.7 13)')
-      ellipse.leave(cx='90.8' cy='5.1' rx='10.3' ry='4.2' transform='rotate(-18.7 90.8 5.1)' fill='#009245')
+  include fto.logo.pug
   nav
     ul
       -var navegation = ["index","about","products","shipping","farm","contact"]
@@ -20,8 +8,6 @@ header
           li #[a(class="home" href=`${page}.html`) home]
         else 
           li #[a(class=`${page}` href=`${page}.html`) #{page}]
-
-
 
   .social
     .twitter 
