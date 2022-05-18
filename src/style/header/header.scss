@@ -6,10 +6,33 @@ header {
   justify-content: space-between;
 
   .logo {
-    margin: 5px;
-    width: 70px;
+    img {
+      height: 50px;
+      width: 208px;
+    }
+  }
+  @media screen and(max-width:850px) {
+    padding: 0 10px;
+  }
+  .social {
+    @media screen and(max-width:850px) {
+      display: none;
+    }
   }
 }
 
 @import "nav.scss";
 @import "social.scss";
+
+.nav-menu-button {
+  @media screen and(min-width:700px) {
+    display: none;
+  }
+  div {
+    width: 35px;
+    height: 4px;
+    background: black;
+    margin: 5px;
+    border-radius: 5px;
+  }
+}

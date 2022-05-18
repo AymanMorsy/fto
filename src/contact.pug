@@ -1,12 +1,9 @@
 doctype html
 html(lang="en")
   head
-    include includes/headbasic.pug
+    include components/headbasic.pug
   body(data-barba='wrapper')
     main(data-barba='container' data-barba-namespace='contact')
-      .transition
-        include includes/fto.logo.pug
-        h2(class="slogan") #[span F]arm #[span T]aste #[span O]rganic
       .content
-        include includes/header.pug
+        include components/header.pug
       h1 contact page

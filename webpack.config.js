@@ -10,13 +10,19 @@ let navPages = nav.map(
       description: `${page.description}`,
       filename: `${page.name}.html`,
       template: path.resolve(__dirname, "src", `${page.name}.pug`),
+      chunks: ["main", page.name],
     })
 );
 module.exports = {
   mode: "development",
+  entry: {
+    main: "./src/main.js",
+    about: "./src/about.js",
+    farm: "./src/farm.js",
+  },
   output: {
     clean: true,
-    filename: "bundel.js",
+    filename: "[name].bundel.js",
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "imges/[name][ext][query]",
   },
@@ -26,7 +32,12 @@ module.exports = {
       {
         test: /\.scss/,
         type: "asset/resource",
-        use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          miniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -49,12 +60,12 @@ module.exports = {
   devServer: {
     watchFiles: ["src/**/*.pug"],
     hot: true,
-    open: {
-      target: ["index.html"],
-      app: {
-        name: "chrome",
-        arguments: ["--incognito", "--new-window"],
-      },
-    },
+    // open: {
+    //   target: ["index.html"],
+    //   app: {
+    //     name: "chrome",
+    //     arguments: ["--incognito", "--new-window"],
+    //   },
+    // },
   },
 };

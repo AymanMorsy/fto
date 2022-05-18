@@ -1,17 +1,13 @@
 doctype html
 html(lang="en")
   head
-    include includes/headbasic.pug
+    include components/headbasic.pug
   body(data-barba='wrapper')
-    main(data-barba='container' data-barba-namespace='home')
-      .transition
-        include includes/fto.logo.pug
-        h2(class="slogan") #[span F]arm #[span T]aste #[span O]rganic
-      //- header
-      .content
-        include includes/header.pug
+    .container(data-barba='container' data-barba-namespace='home')
+      include components/header.pug
+      //- main
         section.hero 
-          h2 FTO for #[span.dynamic-container #[span.dynamic-word.good good] #[span.dynamic-word.clean clean] #[span.dynamic-word.tasty tasty] #[span.dynamic-word.healty healty]] organic foods.
+
         section.wellcom 
           h3.title Welcome to our healthy farm!
           .cycle-wrapper
@@ -27,27 +23,27 @@ html(lang="en")
               p 3.
               h3 Fast Delivery
               p We want our client to receive their fresh products as soon as possible, so we process and ship the order at once.
-        section.banner 
-          h3 chicken and Vegetables
-          p Fresh and Delicious All Year Round!
-          button Shop Now
+        //- section.banner 
+        //-   h3 chicken and Vegetables
+        //-   p Fresh and Delicious All Year Round!
+        //-   button Shop Now
 
-        section.facts 
-          img(src=require("./imges/vigheart.png") alt="")
-          .info
-            div 
-              h5 A Source of Vitamins
-              p Vegetables can be eaten either raw or cooked and play an important role in human nutrition, being mostly low in fat and carbohydrates, but high in vitamins, minerals and dietary fiber.
+        //- section.facts 
+        //-   img(src=require("./imges/vigheart.png") alt="")
+        //-   .info
+        //-     div 
+        //-       h5 A Source of Vitamins
+        //-       p Vegetables can be eaten either raw or cooked and play an important role in human nutrition, being mostly low in fat and carbohydrates, but high in vitamins, minerals and dietary fiber.
 
-            div 
-              h5 Best Quality Products
-              p “We eliminated any possible pollution in our soils in order to deliver the purest organic produce to our customers’ tables.“
-            div 
-              h5  Best Quality Products
-              p Vegetables can be eaten either raw or cooked and play an important role in human nutrition, being mostly low in fat and carbohydrates, but high in vitamins, minerals and dietary fiber.
+        //-     div 
+        //-       h5 Best Quality Products
+        //-       p “We eliminated any possible pollution in our soils in order to deliver the purest organic produce to our customers’ tables.“
+        //-     div 
+        //-       h5  Best Quality Products
+        //-       p Vegetables can be eaten either raw or cooked and play an important role in human nutrition, being mostly low in fat and carbohydrates, but high in vitamins, minerals and dietary fiber.
 
 
-        section(class="prod-feature" )
+        //- section(class="prod-feature" )
           img(src=require('./imges/checken.jpg') alt='')
           img(src=require('./imges/tomato.jpg') alt='')
           img(src=require('./imges/carotes.jpg') alt='')
@@ -56,6 +52,4 @@ html(lang="en")
           img(src=require('./imges/carotes.jpg') alt='')
           img(src=require('./imges/checken.jpg') alt='')
           img(src=require('./imges/tomato.jpg') alt='')
-
-
-    include includes/footer.pug
+      //- include components/footer/footer.pug

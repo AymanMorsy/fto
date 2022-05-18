@@ -7,10 +7,7 @@
 
 @import "style/reset.scss";
 @import "style/header/header.scss";
-
-header .logo {
-  margin: 5px;
-}
+@import "components/footer/footer.scss";
 
 .hero {
   position: relative;
@@ -45,29 +42,6 @@ header .logo {
 
   .dynamic-word {
     color: var(--green);
-  }
-}
-.transition {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: #dffff4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  transform: translateX(100%);
-  z-index: 1000;
-  .logo {
-    width: 200px;
-    // height: 200px;
-    z-index: 1001;
-  }
-
-  h2 {
-    span {
-      color: #017739;
-    }
   }
 }
 
@@ -139,10 +113,6 @@ section.banner {
     width: 250px;
     height: 250px;
   }
-}
-
-footer {
-  height: 200vh;
 }
 
 section.facts {

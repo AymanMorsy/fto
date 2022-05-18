@@ -1,14 +1,14 @@
 doctype html
 html(lang="en")
   head
-    include includes/headbasic.pug
+    include components/headbasic.pug
   body(data-barba='wrapper')
-    main(data-barba='container' data-barba-namespace='about')
-      .transition
-        include includes/fto.logo.pug
-        h2(class="slogan") #[span F]arm #[span T]aste #[span O]rganic
-      .content
-        include includes/header.pug
-        h1 about
-        p FTO is a company, which cherishes nature as one of our most valuable goods. We maintain the integrity of a valuable ecosystem, through ecological and organic production, while meeting consumers demand for healthy, tasty and more nutritious food.
-        include includes/footer.pug
+    .container(data-barba='container' data-barba-namespace='about')
+      include components/header.pug
+      main
+        .about-hero
+          h1 About Us
+        .content-wrapper
+          p.about. 
+            #[span Hello Organic] is a company, which cherishes nature as one of our most valuable goods. We maintain the integrity of a valuable ecosystem, through ecological and organic production, while meeting consumers demand for healthy, tasty and more nutritious food.
+      include components/footer/footer.pug
