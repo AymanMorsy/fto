@@ -221,3 +221,29 @@ const navMenuButton = document.querySelector(".nav-menu-button");
 navMenuButton.addEventListener("click", () => {
   navMenu.classList.toggle("isOpen");
 });
+
+// Counter Observer //
+// const counters = document.querySelectorAll(".counter");
+// const whyChooseUs = document.querySelector(".why-us");
+// const options = {
+//   root: null,
+//   threshold: 0.1,
+//   rootMargin: "-130px",
+// };
+// let observerStatus = true;
+// const observer = new IntersectionObserver(function (entries, observer) {
+//   if (observerStatus && entries[0].isIntersecting) {
+//     observerStatus = false;
+//     counters.forEach((ele) => {
+//       let num = 0;
+//       let counterID = setInterval(() => {
+//         ele.innerText = num++;
+//         if (num === Number(ele.dataset.num)) {
+//           clearInterval(counterID);
+//         }
+//       }, 1);
+//     });
+//   }
+// }, options);
+
+// observer.observe(whyChooseUs);

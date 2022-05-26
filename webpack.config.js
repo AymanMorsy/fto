@@ -18,7 +18,6 @@ module.exports = {
   entry: {
     main: "./src/main.js",
     about: "./src/about.js",
-    farm: "./src/farm.js",
   },
   output: {
     clean: true,

@@ -2,7 +2,7 @@ header
   include fto.logo.pug
   nav.desktop
     ul
-      -var navegation = ["index","about","products","shipping","farm","contact"]
+      -var navegation = ["index","about","products","shipping","contact"]
       each page in navegation
         if page === "index"
           li #[a(class="home" href=`${page}.html`) home]
@@ -10,7 +10,7 @@ header
           li #[a(class=`${page}` href=`${page}.html`) #{page}]
   nav.mobile
     ul
-      -var navegation = ["index","about","products","shipping","farm","contact"]
+      -var navegation = ["index","about","products","shipping","contact"]
       each page in navegation
         if page === "index"
           li #[a(class="home" href=`${page}.html`) home]
