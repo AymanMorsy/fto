@@ -6,7 +6,7 @@ const { nav } = require("./pages.json");
 let navPages = nav.map(
   (page) =>
     new htmlWebpackPlugin({
-      title: `FTO ${page.name}`,
+      title: `${page.title}`,
       description: `${page.description}`,
       filename: `${page.name}.html`,
       template: path.resolve(__dirname, "src", `${page.name}.pug`),

@@ -247,3 +247,32 @@ navMenuButton.addEventListener("click", () => {
 // }, options);
 
 // observer.observe(whyChooseUs);
+
+
+
+// s-filter Products
+const productsFliter = document.querySelector('.product-filter  nav')
+const products = document.querySelectorAll('.product-container .product')
+const activeNav = document.querySelectorAll('.product-filter nav li a')
+
+
+
+productsFliter.addEventListener('click',(e)=>{
+  e.preventDefault
+  products.forEach(ele =>{
+    console.log('%cmain.js line:263 ele', 'color: #007acc;', ele);
+    console.log('%cmain.js line:264 e.target.dataset.get', 'color: white; background-color: #007acc;', e.target.dataset.get);
+    if(ele.classList.contains(e.target.dataset.get)){
+      ele.style.display='inline'
+      // make button active
+      activeNav.forEach(btn =>{
+        btn.classList.remove('active')
+        e.target.classList.add('active')
+      })
+    }else{
+      ele.style.display='none'
+    }
+    
+  })
+})
+// e-filter Products

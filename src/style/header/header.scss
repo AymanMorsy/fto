@@ -4,7 +4,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   .logo {
     img {
       height: 50px;
@@ -34,5 +33,38 @@ header {
     background: black;
     margin: 5px;
     border-radius: 5px;
+  }
+}
+
+.cart{
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  right: 15px;
+  top:50vh;
+  z-index: 100;
+  background-color: white;
+
+  svg{
+    width: 20px;
+    margin-top: 3px;
+  }
+}
+.fav{
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  right: 15px;
+  top:calc(50vh + 31px);
+  z-index: 100;
+  background-color: white;
+
+  svg{
+    width: 20px;
+    margin-top: 3px;
   }
 }

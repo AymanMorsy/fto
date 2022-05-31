@@ -3,10 +3,31 @@ html(lang="en")
   head
     include components/headbasic.pug
   body(data-barba='wrapper')
+    include components/header.pug
     main(data-barba='container' data-barba-namespace='contact')
-      .content
-        include components/header.pug
-      h1 contact page
+      .contact-hero
+        .page-info
+          p.wellcome Wellcome To Our Farm
+          p.title Contact Us
+      .contact-detials 
+        .email
+          svg(stroke='currentColor' fill='currentColor' stroke-width='0' viewbox='0 0 24 24' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg')
+            path(fill='none' d='M0 0h24v24H0z')
+            path(d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57V12c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57V12c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z')
+          h6 Email  
+          p info@hellorganics.com
+        .phone 
+          svg(stroke='currentColor' fill='currentColor' stroke-width='0' viewbox='0 0 16 16' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg')
+            path(fill-rule='evenodd' d='M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z')
+          h6 Phone Number 
+          p +01010938037
+          p +20101245789
+        .address 
+          svg(stroke='currentColor' fill='currentColor' stroke-width='0' viewbox='0 0 384 512' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg')
+            path(d='M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z')
+          h6 Address
+          p Lorem ipsum dolor sit amet.
+
       //- https://google-map-generator.com/
       .mapouter
         .gmap_canvas
