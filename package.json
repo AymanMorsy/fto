@@ -30,6 +30,7 @@
     "@barba/prefetch": "^2.1.10",
     "contentful": "^9.1.28",
     "gsap": "^3.9.1",
-    "locomotive-scroll": "^4.1.4"
+    "locomotive-scroll": "^4.1.4",
+    "swiper": "^8.2.2"
   }
 }

@@ -1,7 +1,26 @@
+import Swiper from 'swiper';
 import "./style.scss";
 // import barba from "@barba/core";
 // import gsap from "gsap";
-import { aboutjs } from "./about";
+// import { aboutjs } from "./about";
+
+
+
+
+
+var swiper = new Swiper(".mySwiper", {
+  autoplay: 1000,
+  loop: true,
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
+
 
 // import * as contentful from "contentful";
 
@@ -58,20 +77,18 @@ import { aboutjs } from "./about";
 
 // const accessToken = "SVgVyebXkcCkniau_rnQw1cGDD8ifmrV1CSqc6d53Wo";
 // const spaceId = "qsose1xd63wa";
-// // https://graphql.contentful.com/content/v1/spaces/qsose1xd63wa/explore?access_token=SVgVyebXkcCkniau_rnQw1cGDD8ifmrV1CSqc6d53Wo
+// https://graphql.contentful.com/content/v1/spaces/qsose1xd63wa/explore?access_token=SVgVyebXkcCkniau_rnQw1cGDD8ifmrV1CSqc6d53Wo
 
 // const query = `
 // {
-//   productsCollection{
-//     items {
-//     productName
-//       price
-//       image{
-//         url
-//       }
+//   aboutCollection{
+//     items{
+//       ourStory
+//       ourServicesAndBenefits
+//       ourMission
+//     }
 //   }
 //   }
-// }
 // `;
 // fetch(
 //   `https://graphql.contentful.com/content/v1/spaces/${spaceId}/environments/master`,
@@ -88,7 +105,7 @@ import { aboutjs } from "./about";
 // )
 //   .then((res) => res.json())
 //   .then((response) => {
-//     console.log("response: ", response.data.productsCollection.items);
+//     console.log("response: ", response.data.aboutCollection.items);
 //   })
 //   .catch((error) => {
 //     console.log("error: ", error);
@@ -250,29 +267,4 @@ navMenuButton.addEventListener("click", () => {
 
 
 
-// s-filter Products
-const productsFliter = document.querySelector('.product-filter  nav')
-const products = document.querySelectorAll('.product-container .product')
-const activeNav = document.querySelectorAll('.product-filter nav li a')
 
-
-
-productsFliter.addEventListener('click',(e)=>{
-  e.preventDefault
-  products.forEach(ele =>{
-    console.log('%cmain.js line:263 ele', 'color: #007acc;', ele);
-    console.log('%cmain.js line:264 e.target.dataset.get', 'color: white; background-color: #007acc;', e.target.dataset.get);
-    if(ele.classList.contains(e.target.dataset.get)){
-      ele.style.display='inline'
-      // make button active
-      activeNav.forEach(btn =>{
-        btn.classList.remove('active')
-        e.target.classList.add('active')
-      })
-    }else{
-      ele.style.display='none'
-    }
-    
-  })
-})
-// e-filter Products

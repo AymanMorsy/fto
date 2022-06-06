@@ -18,6 +18,8 @@ module.exports = {
   entry: {
     main: "./src/main.js",
     about: "./src/about.js",
+    products: "./src/products.js",
+    shipping: "./src/shipping.js",
   },
   output: {
     clean: true,

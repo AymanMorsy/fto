@@ -2,6 +2,7 @@ doctype html
 html(lang="en")
   head
     include components/headbasic.pug
+    link(rel="stylesheet", href="https://unpkg.com/swiper@8/swiper-bundle.min.css")
   body(data-barba='wrapper')
     .container(data-barba='container' data-barba-namespace='home')
       include components/header.pug
@@ -24,47 +25,55 @@ html(lang="en")
               p We want our client to receive their fresh products as soon as possible, so we process and ship the order at once.
           img.float-left(src=require("./imges/khass.png"), alt="")
           img.float-right(src=require("./imges/tomato.png"), alt="")
+        section.vedio-slider 
+          .swiper.mySwiper
+            .swiper-wrapper
+              //- "https://www.youtube.com/embed/tgbNymZ7vqY"
+              .swiper-slide(data-id="tgbNymZ7vqY")
+                img(src="https://i.ytimg.com/vi/wBcnUUkdavE/maxresdefault.jpg", alt="")
+                svg(stroke='currentColor' fill='currentColor' stroke-width='0' viewbox='0 0 1024 1024' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z')
+                  path(d='M719.4 499.1l-296.1-215A15.9 15.9 0 0 0 398 297v430c0 13.1 14.8 20.5 25.3 12.9l296.1-215a15.9 15.9 0 0 0 0-25.8zm-257.6 134V390.9L628.5 512 461.8 633.1z')
 
-        section.story 
-          .story-img 
-            img(src=require("./imges/chicken.jpg"), alt="")
-          .story-content 
-            p.handerite wellcome to
-            h4 Hello organic store 
-            p Hello Organic store opened its doors in 2020, it was Abdelhalim Kotb dream to offer the best and widest range of organic foods available, and his mission to promote health in the community and to bring a sense of discovery and adventure into food shopping.
-            button
-              | OUR PRODUCTS
-              svg(stroke='currentColor' fill='currentColor' stroke-width='0' viewbox='0 0 1024 1024' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg')
-                path(d='M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z')
-
-
+             
+            .swiper-pagination
         section.why-us
           .hero
           .counters-wrapper
-            h2 why choose us
-            p All of our products are organic & fresh.
+            h2 Why Hello organic ?
+            //- p All of our products are fresh & healthy.
             .counter-container
               .counter-item
                 p.counter(data-num='21') 20+
-                p.info  Products
+                p.info  protein & power
               .counter-item
                 p.counter(data-num='101') 100%
                 p.info Fresh
               .counter-item
-                p.counter(data-num='301') 300+
-                p.infoHappy Clients
+                p.counter(data-num='101') 100%
+                p.infoHappy Organic & healthy
               .counter-item
-                p.counter(data-num='41')
-                  | 40
-                  span.marker
-                    svg(stroke='currentColor' fill='currentColor' stroke-width='0' viewbox='0 0 384 512' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg')
-                      path(d='M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z')
-                p.info Delivery
-        //- section.banner 
-          h3 Chicken & Vegetables
-          p Fresh and Delicious All Year Round!
-          button Shop Now
-        section.week-deal
+                p.counter(data-num='41') 7 Days
+                p.info Home Delivery
+        section.category
+          h3 Our Category products
+          .wrapper
+            a.items(href="./products.html#vegetables")
+              img(src=require("./imges/cat-veg.jpg"))
+              p vegtables
+            a.items(href="./products.html#microgreen")
+              img(src=require("./imges/cat-micro.jpg"))
+              p Microgreen
+            a.items(href="./products.html#dairy")
+              img(src=require("./imges/cat-dairy.jpg"))
+              p Dairy
+            a.items(href="./products.html#bee")
+              img(src=require("./imges/cat-bee.jpg"))
+              p Bee
+            a.items(href="./products.html#chicken")
+              img(src=require("./imges/cat-ch.jpg"))
+              p chicken
+        //- section.week-deal
           .container 
             .left 
               h3 
@@ -72,47 +81,17 @@ html(lang="en")
                 span Weeks
               p
                 | Get 
-                span 1KG 
-                | for only 
-                span EGP 20
-              .deal-wrapper 
-                .days
-                  p 7
-                  p Days 
-                .hours
-                  p 23
-                  p hours 
-                .min
-                  p 52
-                  p min 
-                .sec
-                  p 07
-                  p sec 
+                span.unit 1KG 
+                |  of 
+                span.product Capsicum 
+                |  for only 
+                span.price EGP 20
+              p 
+                | We have Only about 
+                span.stock 100kg 
+                |  existing for order.
             .right 
               .product
                 img(src="https://cdn.gourmetegypt.com/media/catalog/product/cache/2b4d21b90ad5abb98380bc0a709a4ac8/r/e/red-_-yellow-capsicums-photo.jpg")
-        //- section.facts 
-          img(src=require("./imges/vigheart.png") alt="")
-          .info
-            div 
-              h5 A Source of Vitamins
-              p Vegetables can be eaten either raw or cooked and play an important role in human nutrition, being mostly low in fat and carbohydrates, but high in vitamins, minerals and dietary fiber.
 
-            div 
-              h5 Best Quality Products
-              p “We eliminated any possible pollution in our soils in order to deliver the purest organic produce to our customers’ tables.“
-            div 
-              h5  Best Quality Products
-              p Vegetables can be eaten either raw or cooked and play an important role in human nutrition, being mostly low in fat and carbohydrates, but high in vitamins, minerals and dietary fiber.
-
-
-        //- section.prod-feature
-          img(src=require('./imges/checken.jpg') alt='')
-          img(src=require('./imges/tomato.jpg') alt='')
-          img(src=require('./imges/carotes.jpg') alt='')
-          img(src=require('./imges/checken.jpg') alt='')
-          img(src=require('./imges/tomato.jpg') alt='')
-          img(src=require('./imges/carotes.jpg') alt='')
-          img(src=require('./imges/checken.jpg') alt='')
-          img(src=require('./imges/tomato.jpg') alt='')
       include components/footer/footer.pug

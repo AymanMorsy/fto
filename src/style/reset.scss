@@ -1,6 +1,12 @@
 html,body{
   overflow-x:hidden ;
 }
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body {
   padding: 0;
   margin: 0;
@@ -17,9 +23,7 @@ li {
   margin: 0;
   list-style-type: none;
 }
-* {
-  box-sizing: border-box;
-}
+
 p{
   font-size: 20px;
 }
