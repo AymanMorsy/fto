@@ -41,6 +41,14 @@ module.exports = {
         ],
       },
       {
+        test: /\.css/,
+        type: "asset/resource",
+        use: [
+          miniCssExtractPlugin.loader,
+          "css-loader",
+        ],
+      },
+      {
         test: /\.(png|jpe?g|gif)$/i,
         type: "asset/resource",
       },
@@ -59,7 +67,7 @@ module.exports = {
   },
   plugins: [...navPages, new miniCssExtractPlugin()],
   devServer: {
-    watchFiles: ["src/**/*.pug"],
+    watchFiles: ["src/**/*.pug","src/**/*.scss"],
     hot: true,
     // open: {
     //   target: ["index.html"],

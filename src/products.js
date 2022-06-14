@@ -10,7 +10,7 @@ const allTab = document.getElementById('all')
 function filterProducts(hash){
 
     document.querySelectorAll('.product-container .product').forEach(product =>{
-        console.log('all⛔', document.querySelectorAll('.product-container .product'));
+        // console.log('all⛔', document.querySelectorAll('.product-container .product'));
 
         if(product.classList.contains(hash) || hash === "all" || hash === ""){
           product.style.display='inline'
@@ -86,31 +86,34 @@ function generateProduct(productName,unit,avilability,image,price,benefitsAndVal
 
 const query = `
 {
-    productsCollection{
-      items{
-        productName
-        unit
-        category
-        avilability
-        image {
-          title
-          description
-          contentType
-          fileName
-          size
-          url
-          width
-          height
-        }
-        price
-        benefitsAndValues1
-        benefitsAndValues2
-        benefitsAndValues3
-        benefitsAndValues4
-        benefitsAndValues5
+  productsCollection{
+    items{
+      sys{
+        id
       }
+      productName
+      unit
+      category
+      avilability
+      image {
+        title
+        description
+        contentType
+        fileName
+        size
+        url
+        width
+        height
+      }
+      price
+      benefitsAndValues1
+      benefitsAndValues2
+      benefitsAndValues3
+      benefitsAndValues4
+      benefitsAndValues5
     }
   }
+}
 `;
 fetch(
   `https://graphql.contentful.com/content/v1/spaces/${spaceId}/environments/master`,
@@ -128,14 +131,15 @@ fetch(
   .then((res) => res.json())
   .then((response) => {
     const products = response.data.productsCollection.items
-    console.log('products: ', products);
+    // console.log('products: ', products);
     // [{extract from array > extract from object}]
     
     const fragment = document.createDocumentFragment();
     products.forEach((prod) =>{
-        const {productName,unit,category,avilability,image,price,benefitsAndValues1,benefitsAndValues2,benefitsAndValues3,benefitsAndValues4,benefitsAndValues5} = prod
-        console.log('avilability: ', avilability);
+        const {sys:{id},productName,unit,category,avilability,image,price,benefitsAndValues1,benefitsAndValues2,benefitsAndValues3,benefitsAndValues4,benefitsAndValues5} = prod
+        // console.log('avilability: ', avilability);
         var div = document.createElement('div');
+        div.id = id
         div.classList.add("product")
         div.classList.add(`${category[0].toLowerCase()}`)
         avilability? div.classList.add("inseason"):null
@@ -155,6 +159,50 @@ fetch(
   });
 
 
+import { async } from "@firebase/util"
 /*****************GrapgQl*******************/
 
 
+/*****************Firebase*******************/
+import { initializeApp } from "firebase/app";
+const firebaseConfig = {
+  apiKey: "AIzaSyCaDwXUAMcg8Yqm2s5FxoIYrjHInu8Dt-o",
+  authDomain: "hellorganics.firebaseapp.com",
+  projectId: "hellorganics",
+  storageBucket: "hellorganics.appspot.com",
+  messagingSenderId: "686729744109",
+  appId: "1:686729744109:web:4c43731e87202647ec46e4"
+};
+const app = initializeApp(firebaseConfig);
+
+const firstore = getFirestore(app)
+// var firebase = require('firebase');                            
+// var firebaseui = require('firebaseui'); 
+import { getFirestore,collection,getDocs, doc, setDoc, addDoc  } from "firebase/firestore";
+
+
+import {getAuth,signInWithEmailAndPassword} from "firebase/auth";
+
+const auth = getAuth(app)
+
+const loginEmailPass = async()=>{
+
+}
+signInWithEmailAndPassword(auth,"ayman@yahoo.com","123456789").then(userCridential =>{
+  console.log('userCridential: ', userCridential.user);
+
+})
+
+ 
+// setDoc(doc(firstore,"customers/2022"),{name:"hassan mohamed"})
+const orderCollections = collection(firstore,"orders")
+async function addOrder(){
+  const orderDoc =await addDoc(orderCollections,{
+    cutomer:"Ali khaled",
+    tomato:"1kg",
+    lemon:"500gm",
+    tottal_price:142
+  })
+}
+// addOrder()
+/*****************Firebase*******************/

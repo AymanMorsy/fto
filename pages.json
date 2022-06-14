@@ -24,6 +24,11 @@
       "name": "contact",
       "title": "contact",
       "description": "this contact page"
+    },
+    {
+      "name": "cart",
+      "title": "cart",
+      "description": "this cart page"
     }
   ],
   "products": [
