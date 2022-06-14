@@ -1,4 +1,5 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 import "./style.scss";
 // import barba from "@barba/core";
 // import gsap from "gsap";
@@ -9,9 +10,12 @@ import "./style.scss";
 
 
 var swiper = new Swiper(".mySwiper", {
-  autoplay: 1000,
+
+  // autoplay: {
+  //   delay: 2500,
+  // },
   loop: true,
-  effect: "coverflow",
+  // effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
