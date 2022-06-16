@@ -5,5 +5,19 @@ html(lang="en")
   body(data-barba='wrapper')
       include components/header.pug
       main
-        h3 this cart page
+        h3 Your Shopping Cart
+        .cart-container 
+          .cart-product 
+            img(src=require("./imges/tomato.jpg"))
+            .prod-detials 
+              p Cherry Tomato(1kg)
+              div 
+                select.qty 
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+                  option(value='5') 5
+                p.price EGP20
+
       include components/footer/footer.pug

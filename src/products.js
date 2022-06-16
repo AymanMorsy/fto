@@ -52,7 +52,7 @@ window.addEventListener('hashchange', function(){
 const accessToken = "SVgVyebXkcCkniau_rnQw1cGDD8ifmrV1CSqc6d53Wo";
 const spaceId = "qsose1xd63wa";
 const productContainer = document.querySelector(".product-container")
-
+const cart = document.querySelector(".cart .counter")
 function generateProduct(productName,unit,avilability,image,price,benefitsAndValues1,benefitsAndValues2,benefitsAndValues3,benefitsAndValues4,benefitsAndValues5){
     
     return `
@@ -84,7 +84,7 @@ function generateProduct(productName,unit,avilability,image,price,benefitsAndVal
 `
 }
 
-const query = `
+const contentfulGQquery = `
 {
   productsCollection{
     items{
@@ -124,7 +124,7 @@ fetch(
       authorization: `Bearer ${accessToken}`,
     },
     body: JSON.stringify({
-      query,
+      query:contentfulGQquery,
     }),
   }
 )
@@ -136,7 +136,9 @@ fetch(
     
     const fragment = document.createDocumentFragment();
     products.forEach((prod) =>{
+      
         const {sys:{id},productName,unit,category,avilability,image,price,benefitsAndValues1,benefitsAndValues2,benefitsAndValues3,benefitsAndValues4,benefitsAndValues5} = prod
+        
         // console.log('avilability: ', avilability);
         var div = document.createElement('div');
         div.id = id
@@ -145,6 +147,34 @@ fetch(
         avilability? div.classList.add("inseason"):null
         
         div.innerHTML = generateProduct(productName,unit,avilability,image,price,benefitsAndValues1,benefitsAndValues2,benefitsAndValues3,benefitsAndValues4,benefitsAndValues5);
+        div.onclick = ()=> {
+          // adding first product (localstorage is empty) //
+          if( !localStorage.cartNum){
+            localStorage.cartNum = 1
+            localStorage.products = JSON.stringify({[id]:{...prod,inCart:1}})
+            console.log(1);
+            
+          }else{
+            // threr is one product at least  //
+            let prodlocal = JSON.parse(localStorage.products)
+            if(!prodlocal[id]){
+              console.log(2);
+              // append new product and update cart
+              prodlocal = {...prodlocal,[id]:{...prod,inCart:1}}
+              localStorage.products = JSON.stringify(prodlocal)
+                localStorage.cartNum = +localStorage.cartNum + 1
+                
+              }else{
+                console.log(3);
+                // update cart and incart for existing products
+                prodlocal[id].inCart += 1
+                localStorage.products = JSON.stringify(prodlocal)
+                localStorage.cartNum = +localStorage.cartNum + 1
+              }
+            }
+            console.log('prodlocal: ', JSON.parse(localStorage.products));
+          cart.innerText  = +cart.innerText + 1
+        }
         fragment.appendChild(div);
     })
     productContainer.appendChild(fragment)
@@ -159,50 +189,5 @@ fetch(
   });
 
 
-import { async } from "@firebase/util"
 /*****************GrapgQl*******************/
 
-
-/*****************Firebase*******************/
-import { initializeApp } from "firebase/app";
-const firebaseConfig = {
-  apiKey: "AIzaSyCaDwXUAMcg8Yqm2s5FxoIYrjHInu8Dt-o",
-  authDomain: "hellorganics.firebaseapp.com",
-  projectId: "hellorganics",
-  storageBucket: "hellorganics.appspot.com",
-  messagingSenderId: "686729744109",
-  appId: "1:686729744109:web:4c43731e87202647ec46e4"
-};
-const app = initializeApp(firebaseConfig);
-
-const firstore = getFirestore(app)
-// var firebase = require('firebase');                            
-// var firebaseui = require('firebaseui'); 
-import { getFirestore,collection,getDocs, doc, setDoc, addDoc  } from "firebase/firestore";
-
-
-import {getAuth,signInWithEmailAndPassword} from "firebase/auth";
-
-const auth = getAuth(app)
-
-const loginEmailPass = async()=>{
-
-}
-signInWithEmailAndPassword(auth,"ayman@yahoo.com","123456789").then(userCridential =>{
-  console.log('userCridential: ', userCridential.user);
-
-})
-
- 
-// setDoc(doc(firstore,"customers/2022"),{name:"hassan mohamed"})
-const orderCollections = collection(firstore,"orders")
-async function addOrder(){
-  const orderDoc =await addDoc(orderCollections,{
-    cutomer:"Ali khaled",
-    tomato:"1kg",
-    lemon:"500gm",
-    tottal_price:142
-  })
-}
-// addOrder()
-/*****************Firebase*******************/

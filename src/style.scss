@@ -675,3 +675,47 @@ section.category{
   }
 }
 // E-contact page //
+
+
+
+.registeration{
+  position: absolute;
+  width: 320px;
+  right: 0;
+  top: 0;
+  background: #501eb3;
+  color: wheat;
+  padding: 10px;
+  z-index: 1000;
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+.cart-product  {
+  display:flex;
+  img{
+    width: 100px;
+  }
+
+  .prod-detials {
+
+    div{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .qty{
+        border: none;
+        height: 30px;
+      }
+      p{
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}

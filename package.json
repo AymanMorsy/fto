@@ -30,7 +30,6 @@
     "@barba/prefetch": "^2.1.10",
     "contentful": "^9.1.28",
     "firebase": "^9.8.3",
-    "firebaseui": "^6.0.1",
     "gsap": "^3.9.1",
     "locomotive-scroll": "^4.1.4",
     "swiper": "^8.2.2"
