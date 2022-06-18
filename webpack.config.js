@@ -14,12 +14,15 @@ let navPages = nav.map(
     })
 );
 module.exports = {
+  // mode: "production",
   mode: "development",
   entry: {
     main: "./src/main.js",
+    index: "./src/index.js",
     about: "./src/about.js",
     products: "./src/products.js",
     shipping: "./src/shipping.js",
+    cart: "./src/cart.js",
   },
   output: {
     clean: true,

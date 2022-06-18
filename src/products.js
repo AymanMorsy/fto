@@ -151,8 +151,11 @@ fetch(
           // adding first product (localstorage is empty) //
           if( !localStorage.cartNum){
             localStorage.cartNum = 1
+            
             localStorage.products = JSON.stringify({[id]:{...prod,inCart:1}})
             console.log(1);
+            // adding totalPrice
+            localStorage.totalCost = price
             
           }else{
             // threr is one product at least  //
@@ -162,7 +165,10 @@ fetch(
               // append new product and update cart
               prodlocal = {...prodlocal,[id]:{...prod,inCart:1}}
               localStorage.products = JSON.stringify(prodlocal)
-                localStorage.cartNum = +localStorage.cartNum + 1
+              localStorage.cartNum = +localStorage.cartNum + 1
+              // append total price for appeneded product
+              localStorage.totalCost = +localStorage.totalCost + price
+
                 
               }else{
                 console.log(3);
@@ -170,6 +176,8 @@ fetch(
                 prodlocal[id].inCart += 1
                 localStorage.products = JSON.stringify(prodlocal)
                 localStorage.cartNum = +localStorage.cartNum + 1
+
+                localStorage.totalCost = +localStorage.totalCost + price
               }
             }
             console.log('prodlocal: ', JSON.parse(localStorage.products));
