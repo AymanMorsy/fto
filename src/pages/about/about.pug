@@ -1,10 +1,10 @@
 doctype html
 html(lang="en")
   head
-    include components/headbasic.pug
+    include ../../components/header/headbasic.pug
   body(data-barba='wrapper')
     .container(data-barba='container' data-barba-namespace='about')
-      include components/header.pug
+      include ../../components/header/header.pug
       main
         .about-hero
         .content-wrapper
@@ -17,4 +17,4 @@ html(lang="en")
           .our-mission
             h6 Our mission
             p.content 
-      include components/footer/footer.pug
+      include ../../components/footer/footer.pug

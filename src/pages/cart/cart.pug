@@ -1,14 +1,14 @@
 doctype html
 html(lang="en")
   head
-    include components/headbasic.pug
+    include ../../components/header/headbasic.pug
   body(data-barba='wrapper')
-      include components/header.pug
+      include ../../components/header/header.pug
       main
         h3 Your Shopping Cart
         .cart-container 
           .cart-product 
-            img(src=require("./imges/tomato.jpg"))
+            img(src=require("../../imges/tomato.jpg"))
             .prod-detials 
               p Cherry Tomato(1kg)
               div 
@@ -20,4 +20,4 @@ html(lang="en")
                   option(value='5') 5
                 p.price EGP20
 
-      include components/footer/footer.pug
+      include ../../components/footer/footer.pug

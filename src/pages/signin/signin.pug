@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+  head
+    include ../../components/header/headbasic.pug
+  body
+      include ../../components/header/header.pug
+      main
+       .signform 
+        .signin
+            p.form-title Sign in
+            .email 
+                input(type="email", name="" placeholder="Email")
+            .pass 
+                input(type="password", name="" placeholder="Password")
+            button.submit
+                svg(stroke='currentColor' fill='currentColor' stroke-width='0' viewbox='0 0 512 512' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z')
+                span SIGN IN
+            .error-msg 
+                p 
+                    
+            p.doyou 
+                | Don't have account ? 
+                span Sign up
+        .signup
+            p.form-title Sign up
+            .email 
+                input(type="email", name="" placeholder="Email")
+            .pass 
+                input(type="password", name="" placeholder="Password")
+            button.submit
+                svg(stroke='currentColor' fill='currentColor' stroke-width='0' viewbox='0 0 512 512' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M106 304v-54h54v-36h-54v-54H70v54H16v36h54v54h36z')
+                    circle(cx='288' cy='144' r='112')
+                    path(d='M288 288c-69.42 0-208 42.88-208 128v64h416v-64c0-85.12-138.58-128-208-128z')
+                
+                span SIGN UP
+            .error-msg 
+                p       
+            p.doyou  
+                | have already account ? 
+                span Sign in
+      include ../../components/footer/footer.pug

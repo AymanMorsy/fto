@@ -1,28 +1,30 @@
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
-const { nav } = require("./pages.json");
+const { pages } = require("./pages.json");
 
-let navPages = nav.map(
+let navPages = pages.map(
   (page) =>
     new htmlWebpackPlugin({
       title: `${page.title}`,
       description: `${page.description}`,
       filename: `${page.name}.html`,
-      template: path.resolve(__dirname, "src", `${page.name}.pug`),
+      template: path.resolve(__dirname, `${["about","cart","contact","products","shipping","signin",].includes(page.name) ? `src/pages/${page.name}` : "src" }`, `${page.name}.pug`),
       chunks: ["main", page.name],
     })
 );
+
 module.exports = {
   // mode: "production",
   mode: "development",
   entry: {
-    main: "./src/main.js",
-    index: "./src/index.js",
-    about: "./src/about.js",
-    products: "./src/products.js",
-    shipping: "./src/shipping.js",
-    cart: "./src/cart.js",
+    main:    "./src/main.js",
+    index:   "./src",
+    about:   "./src/pages/about",
+    products:"./src/pages/products",
+    shipping:"./src/pages/shipping",
+    cart:    "./src/pages/cart",
+    signin:  "./src/pages/signin",
   },
   output: {
     clean: true,
@@ -71,7 +73,7 @@ module.exports = {
   plugins: [...navPages, new miniCssExtractPlugin()],
   devServer: {
     watchFiles: ["src/**/*.pug","src/**/*.scss"],
-    hot: true,
+    // hot: true,
     // open: {
     //   target: ["index.html"],
     //   app: {

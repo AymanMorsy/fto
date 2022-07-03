@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    include components/headbasic.pug
+    include components/header/headbasic.pug
     // Open Graph / Facebook
     meta(property='og:type' content='website')
     meta(property='og:url' content='https://www.hellorganics.com/')
@@ -16,10 +16,10 @@ html(lang="en")
     meta(property='twitter:image' content='https://images.ctfassets.net/qsose1xd63wa/7lC3HTuyLCfIRvgR6eXbuS/9f3eaef53805b4418de2782ea7161c13/fb.jpg')
   body(data-barba='wrapper')
     .container(data-barba='container' data-barba-namespace='home')
-      include components/header.pug
+      include components/header/header.pug
       main
-        //- section.hero 
-        //- section.wellcom 
+        section.hero 
+        section.wellcom 
           h3.title Hello Orgainc Farm!
           .cycle-wrapper
             .cycle

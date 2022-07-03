@@ -6,7 +6,7 @@
 }
 
 @import "style/reset.scss";
-@import "style/header/header.scss";
+@import "components/header/header.scss";
 @import "components/footer/footer.scss";
 
 section.hero {
@@ -102,6 +102,8 @@ section.wellcom {
   }
 }
 section.vedio-slider{
+  max-width: 1124px;
+    margin: auto;
   .swiper {
     width: 75%;
     padding-top: 50px;

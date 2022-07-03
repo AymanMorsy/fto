@@ -1,5 +1,5 @@
 {
-  "nav": [
+  "pages": [
     {
       "name": "index",
       "title": "hello organic - fresh and healthy organic products",
@@ -29,13 +29,11 @@
       "name": "cart",
       "title": "cart",
       "description": "this cart page"
-    }
-  ],
-  "products": [
+    },
     {
-      "name": "orange",
-      "title": "orgainc orange",
-      "description": "this home page"
+      "name": "signin",
+      "title": "signin",
+      "description": "this cart page"
     }
   ]
 }

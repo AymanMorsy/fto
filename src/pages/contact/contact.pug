@@ -1,9 +1,9 @@
 doctype html
 html(lang="en")
   head
-    include components/headbasic.pug
+    include ../../components/header/headbasic.pug
   body(data-barba='wrapper')
-    include components/header.pug
+    include ../../components/header/header.pug
     main(data-barba='container' data-barba-namespace='contact')
       .contact-hero
         .page-info
@@ -39,4 +39,4 @@ html(lang="en")
           a(href='https://www.embedgooglemap.net')
           style.
             .gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}
-    include components/footer/footer.pug
+    include ../../components/footer/footer.pug
