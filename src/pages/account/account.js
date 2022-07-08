@@ -1,4 +1,4 @@
-import "./signin.scss";
+import "./account.scss";
 import {col,where ,query,getDocs,addTempOrder, emailPasswordSignIn, emailPasswordSignUp} from "../firebase"
 
 const navToSignUp = document.querySelector(".signin .doyou span")
@@ -46,7 +46,7 @@ signInSubmit.addEventListener("click",()=>{
         const cost = JSON.parse(totalCost)
         addTempOrder(user.uid,prod,num,cost)
       }
-      window.location = "products.html"
+      window.location = "index.html"
 
   }).catch(e =>{
     switch (e.code){

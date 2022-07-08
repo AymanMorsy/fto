@@ -1,0 +1,154 @@
+// start Product Page //
+.products-hero {
+    background: url("../../imges/banner.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
+    height: 55vh;
+    width: 100vw;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      background: linear-gradient(
+        to bottom,
+        rgba(45, 45, 45, 0.2) 0%,
+        rgba(45, 45, 45, 0.9) 100%
+      );
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .product-filter {
+    text-align: center;
+    padding: 50px 0 20px 0;
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      & li:first-child{
+        background: none;
+        padding-top: 8px;
+      }
+    }
+    li {
+      margin: 5px 2px;
+      padding: 5px 10px 0px 10px;
+      background: #501eb317;
+      border-radius: 10px;
+    }
+    .active{
+      background: #501eb3;
+      
+      a{
+        color: white;
+      }
+    }
+  
+  }
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+    .product {
+       &:hover .img-wrapper .back{
+      top: calc(0% + 1px);
+    }
+      border: 2px solid rgba(128, 128, 128, 0.2);
+      padding-bottom: 10px;
+      // margin: 2px;
+      max-width: 320px;
+      border-radius: 5px;
+      .img-wrapper {
+        overflow: hidden;
+        position: relative;
+        .back {
+          position: absolute;
+          top: 100%;
+          bottom:0;
+          left: 1px;
+          right: 0;
+          padding: 2px;
+          background: #501eb3;
+          color: rgb(210, 210, 210);
+          // width: 100%;
+          border-radius: 5px;
+          z-index: 2;
+          transition: top 0.5s;
+            
+            h6{
+              font-size:24px;
+              margin: 5px;
+              text-align:center;
+         
+              }
+            li{
+              padding-left: 25px;
+              position: relative;
+              font-size: 22px;
+              &:before{
+               position: absolute;
+                content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgZmlsbD0id2hpdGUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjAiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00MzMuMSA2NTcuN2EzMS44IDMxLjggMCAwIDAgNTEuNyAwbDIxMC42LTI5MmMzLjgtNS4zIDAtMTIuNy02LjUtMTIuN0g2NDJjLTEwLjIgMC0xOS45IDQuOS0yNS45IDEzLjNMNDU5IDU4NC4zbC03MS4yLTk4LjhjLTYtOC4zLTE1LjYtMTMuMy0yNS45LTEzLjNIMzE1Yy02LjUgMC0xMC4zIDcuNC02LjUgMTIuN2wxMjQuNiAxNzIuOHoiLz4KPHBhdGggZD0iTTg4MCAxMTJIMTQ0Yy0xNy43IDAtMzIgMTQuMy0zMiAzMnY3MzZjMCAxNy43IDE0LjMgMzIgMzIgMzJoNzM2YzE3LjcgMCAzMi0xNC4zIDMyLTMyVjE0NGMwLTE3LjctMTQuMy0zMi0zMi0zMnptLTQwIDcyOEgxODRWMTg0aDY1NnY2NTZ6Ii8+Cjwvc3ZnPgo=);
+                display: block;
+                width: 22px;
+                height: 10px;
+                margin: 10px 5px 0 10px;
+                left: -8px;
+                top: -9px;
+              }
+            }
+        }
+      }
+      .show-in-season-badge{
+        position: absolute;
+        background: #89ae38;
+        padding: 2px 10px;
+        border-radius: 0 15px 15px 0;
+        color: white;
+        font-size: 15px;
+        z-index: 2;
+      }
+      .hide-in-season-badge{
+        display: none;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .product-detials {
+      padding: 0 10px;
+  
+      .price-cart-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 15px;
+  
+        .price {
+          color: #89ae38;
+        }
+        button {
+          padding: 5px 20px;
+          background-color: #47cf73;
+          border: none;
+          border-radius: 2px;
+          color: white;
+        }
+      }
+      hr {
+        height: 1px;
+        background-color: rgba(204, 204, 204, 0.5);
+        border: none;
+      }
+      p {
+        margin: 0;
+      }
+      .name {
+        color: #7a7a7a;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+  }
+  
+  // end Product Page //

@@ -94,21 +94,13 @@ header {
   .account_cart_wrapper  {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
     div svg{
       font-size: 24px;
     }
 
-    .account{
-      display:flex;
-      flex-direction: row-reverse;
-      align-items: center;
-  
-      p{
-        display: none;
-      }
-  
-    }
+
   
     .cart{
       position: relative;

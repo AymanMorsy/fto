@@ -1,0 +1,61 @@
+// S-contact page //
+.contact-hero{
+
+    background: url("https://preetheme.com/liton/vegita/assets/img/banner/page.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    .page-info{
+      padding: 20px;
+    .title{
+      font-size: 40px;
+      font-weight: 900;
+      color: white;
+    }  
+    }
+    p{
+      color: #47cf73;
+      margin: 0;
+    }
+    @media screen and(min-width:500px){
+      .page-info{
+        padding: 40px;
+      .title{
+        font-size: 70px;
+      } 
+    }
+  }
+  }
+  .contact-detials {
+    padding: 50px 0;
+    width: 90vw;
+    margin:auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    div{
+      background-color: #F2F2F2;
+      padding: 10px;
+      width: 300px;
+      border-radius: 20px;
+      margin: 5px ;
+      min-height: 190px;
+      svg{
+        fill: #47cf73;
+        font-size: 40px;
+      }
+      p,h6{
+        margin: 0;
+      }
+      h6{
+        font-size: 25px;
+      }
+    }
+    @media screen and(min-width:500px){
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  // E-contact page //

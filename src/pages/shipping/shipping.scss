@@ -1,0 +1,61 @@
+// start shipping page //
+.shipping-hero {
+    background: url("../../imges/delivery.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
+    height: 55vh;
+    width: 100vw;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      background: linear-gradient(
+        to bottom,
+        rgba(45, 45, 45, 0.4) 0%,
+        rgba(45, 45, 45, 0.9) 100%
+      );
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .shipping-content {
+    padding: 50px 20px;
+  }
+  
+  .schedule{
+    h1{
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cont {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      
+      .day {
+        width: 100vw;
+        padding: 8px;
+        background: #6028d0;
+        text-align: center;
+        margin: auto;
+        color: white;
+        font-size: 25px;
+        margin-top: 10px;
+      }
+      .regions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        span {
+          background: #35ab5b;
+          padding: 8px;
+          border-radius: 5px;
+          margin: 5px 2px;
+          font-size: 20px;
+          color: rgb(255, 254, 254);
+        }
+      }
+    }
+  }
+  // end shipping page //

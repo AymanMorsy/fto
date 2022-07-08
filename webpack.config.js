@@ -9,7 +9,7 @@ let navPages = pages.map(
       title: `${page.title}`,
       description: `${page.description}`,
       filename: `${page.name}.html`,
-      template: path.resolve(__dirname, `${["about","cart","contact","products","shipping","signin",].includes(page.name) ? `src/pages/${page.name}` : "src" }`, `${page.name}.pug`),
+      template: path.resolve(__dirname, `${["about","cart","contact","products","shipping","account",].includes(page.name) ? `src/pages/${page.name}` : "src" }`, `${page.name}.pug`),
       chunks: ["main", page.name],
     })
 );
@@ -20,11 +20,12 @@ module.exports = {
   entry: {
     main:    "./src/main.js",
     index:   "./src",
-    about:   "./src/pages/about",
-    products:"./src/pages/products",
-    shipping:"./src/pages/shipping",
-    cart:    "./src/pages/cart",
-    signin:  "./src/pages/signin",
+    about:   "./src/pages/about/about.js",
+    products:"./src/pages/products/products.js",
+    shipping:"./src/pages/shipping/shipping.js",
+    cart:    "./src/pages/cart/cart.js",
+    account:  "./src/pages/account/account.js",
+    contact:  "./src/pages/contact/contact.js",
   },
   output: {
     clean: true,

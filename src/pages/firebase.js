@@ -72,15 +72,15 @@ const signOutUser = ()=>  signOut(Auth)
   
   // addOrder()
   
-//   onAuthStateChanged(Auth,(user )=> {
-//     if(user){
-//         console.log(`Wellcome 🍟 ${user.email}`);
-//         document.querySelector(".registeration").style.display="none"
-//       }else{
-//         console.log("SignIn Please");
-//         document.querySelector(".registeration").style.display="block"
-//     }
-//   })
+  // onAuthStateChanged(Auth,(user )=> {
+  //   if(user){
+  //       console.log(`Wellcome 🍟 ${user.email}`);
+  //       document.querySelector(".registeration").style.display="none"
+  //     }else{
+  //       console.log("SignIn Please");
+  //       document.querySelector(".registeration").style.display="block"
+  //   }
+  // })
 
   
   

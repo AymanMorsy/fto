@@ -1,4 +1,4 @@
-
+import "./shipping.scss";
 /*****************GrapgQl*******************/
 // https://www.youtube.com/watch?v=BkecWwcLYuk&ab_channel=Contentful
 // https://codesandbox.io/s/6j2z03p76k?file=/src/index.js:101-407

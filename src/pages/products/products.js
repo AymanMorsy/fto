@@ -1,3 +1,5 @@
+import "./products.scss";
+
 /*****************filter Products*******************/
 
 import { isUserLoggedIn } from "../firebase"
